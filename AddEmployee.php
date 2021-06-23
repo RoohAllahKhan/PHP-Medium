@@ -15,7 +15,6 @@ include "Employee.php";
 </head>
 <body>
 <?php
-//require_once ('connection.php');
 
 $empName = $department = $boss = $designation = $email = $empPassword  = "";
 $salary = 0;

@@ -66,19 +66,7 @@ include "loginClass.php"
 </div>
 <div id="dropDownSelect1"></div>
 
-<!--<form method="post">-->
-<!--    <fieldset style="text-align: center; width: 50%; margin-left: auto; margin-right: auto">-->
-<!--      <legend>Login</legend>-->
-<!--      <label for="email">Email&nbsp;&nbsp;&nbsp;&nbsp;</label>-->
-<!--      <input type="text" id="email" name="email" placeholder="Enter your email" required/>-->
-<!--      <span class="error">*</span><br><br>-->
-<!--      <label for="password">Password</label>-->
-<!--      <input type="password" id="password" name="password" placeholder="Enter password" required/>-->
-<!--      <span class="error">*</span><br><br>-->
-<!--      <span class="error"></span>--><?php //echo $login_obj->noExist ?><!--<br><br>-->
-<!--      <button type="submit" name="login_btn">Login</button>-->
-<!--    </fieldset>-->
-<!--  </form>-->
+
 <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
 <script src="vendor/animsition/js/animsition.min.js"></script>

@@ -2,9 +2,6 @@
     include "includes/db_connection.php";
     class Attendance{
         private $db;
-//        private $timein;
-//        private $timeout;
-//        private $emp_id;
         public $timein;
         public $timeout;
 
@@ -59,16 +56,12 @@
         }
 
         function markAttendance($emp_id, $time_in, $time_out, $date, $hour){
-            //if(isset($_GET['markattendance'])){
              $query = "SELECT * FROM attendance WHERE emp_id=".$emp_id." AND date='".$date."'";
             $record = mysqli_query($this->db, $query);
             $status = "P";
             if($hour >= 11 && $hour < 12){
                 $status = "L";
             }
-//            else if($hour > 12){
-//                $status = "^";
-//            }
             if($record->num_rows > 0) {
                 $row = $record->fetch_assoc();
                 if($row['time_in'] == ""){
@@ -97,7 +90,6 @@
 
             $query = 'SELECT A.emp_id, E.name, A.date, A.time_in, A.time_out, A.a_status 
                       FROM attendance AS A INNER JOIN Employees AS E ON A.emp_id = E.emp_id WHERE A.date="'.$date.'"';
-            //$query = "SELECT * FROM attendance WHERE date='".$date."'";
             $record = mysqli_query($this->db, $query);
             if($record->num_rows > 0){
                 echo "<table><tr><th>Employee ID</th><th>Employee Name</th><th>Date</th><th>Time In</th><th>Time Out</th><th>Status</th></tr>";
@@ -139,6 +131,3 @@
 
     $attendance_obj = new Attendance($db_connect);
 ?>
-
-
-<!--//select a.date, a.leaves, b.late from (select date, COUNT(a_status) as leaves FROM att where a_status="L" group BY date) AS a LEFT JOIN (select date, COUNT(a_status) as late FROM att where a_status="^" group BY date) AS b ON a.date = b.date UNION select b.date, a.leaves, b.late from (select date, COUNT(a_status) as leaves FROM att where a_status="L" group BY date) AS a RIGHT JOIN (select date, COUNT(a_status) as late FROM att where a_status="^" group BY date) AS b ON a.date = b.date-->

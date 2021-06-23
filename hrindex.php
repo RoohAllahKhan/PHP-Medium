@@ -11,12 +11,10 @@ if($_GET['insertflag'] == 2){
 if($_GET['currAttendanceFlag'] == 1){
     include "Attendance.php";
     $attendance_obj->showAttendance($_GET['date']);
-    //$_GET['currAttendanceFlag'] = 0;
 }
 if($_GET['reportFlag'] == 1){
     include "Attendance.php";
     $attendance_obj->getMonthReport($_GET['month'], $_GET['year']);
-    //$_GET['reportFlag'] = 0;
 }
 ?>
 <!DOCTYPE html>
@@ -72,7 +70,6 @@ if ($_GET['modalFlag'] != 1 && $_GET['currAttendanceFlag'] != 1 && $_GET['report
             <input class="btn btn-outline-primary" type="button" onclick="location.href='AddEmployee.php';" value="Add Employee">
             <button class="show_emp_btn btn btn-warning" onclick="location.href='allEmployees.php';">Show Employees</button>
             <div class='attendanceTable'></div>
-            <!--    <div class="reportTable"></div>-->
         </div>
 
     </div>
@@ -98,7 +95,7 @@ if ($_GET['modalFlag'] != 1 && $_GET['currAttendanceFlag'] != 1 && $_GET['report
     $(document).ready(function () {
         $(".timein_btn").click(function () {
             var d = new Date();
-            document.getElementById("timein").value = d.getHours() + ":" + d.getMinutes();
+            document.getElementById("attendance_time_in").value = d.getHours() + ":" + d.getMinutes();
             hour = d.getHours();
 
         });
@@ -186,8 +183,6 @@ if ($_GET['modalFlag'] != 1 && $_GET['currAttendanceFlag'] != 1 && $_GET['report
             }
         });
     });
-    // $('.add_emp_btn').click(function (){
-    //
-    // });
+
 </script>
 

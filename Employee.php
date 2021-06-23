@@ -8,7 +8,6 @@ include "includes/db_connection.php";
             $this->db = $db;
         }
         function addEmployee($name, $department, $salary, $profile_pic, $boss, $designation, $email, $password){
-            //$Manager_query = "SELECT emp_id FROM Employees WHERE name='".$boss."' AND designation='Manager'";
             $query1 = "INSERT INTO Employees(name, department, salary, profile_pic, boss, designation) VALUES ('".$name."','".$department."',".$salary.
                       ",'".$profile_pic."',".$boss.",'".$designation."')";
             if(mysqli_query($this->db, $query1)){

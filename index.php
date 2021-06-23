@@ -58,7 +58,6 @@ if ($_GET['modalFlag'] != 1) {
         <div style="display: inline-block; width: 100%">
             <button class="checkin btn btn-primary">Mark Attendance</button><br><br>
             <div class="dispModal"></div>
-            <!--    <div class="reportTable"></div>-->
         </div>
 
     </div>
@@ -108,7 +107,6 @@ if ($_GET['modalFlag'] != 1) {
         var date = new Date()
         var emp_id = document.getElementById('empid').value;
         var e_date = date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear();
-        //alert(e_date);
         var viewModal = "1";
         if (viewModal != "") {
             $.ajax({

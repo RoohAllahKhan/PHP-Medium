@@ -25,7 +25,6 @@ if($_GET['saveFlag'] == 1){
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
             crossorigin="anonymous"></script>
-<!--    <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>-->
 
 </head>
 <body>
@@ -97,7 +96,6 @@ if($_GET['saveFlag'] == 1){
         }
     }
     $('#empTable').on('click', '.emp_del', function (e) {
-        // e.preventDefault();
         var del_confirmation = confirm("Are you sure? Do you really want to delete the Employee?");
         if(del_confirmation){
             var empID = empTbl.cell($(this).parents('tr'),0).data();
@@ -155,8 +153,6 @@ if($_GET['saveFlag'] == 1){
                 cache: false,
                 processData: false,
                 success: function (data) {
-                    //$(".xyz").html(data);
-                    // $("#bookCover").attr('src', 'images/'+image_name);
                     if(name != '' && department != '' && salary != 0 && designation != '' && email != "" && passwd != ""){
                         $.ajax({
                             url: "allEmployees.php?saveFlag="+saveFlag+"&id=" + empid + "&newname=" + name + "&newdept=" + department + "&newsalary=" + salary+

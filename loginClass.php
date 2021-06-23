@@ -13,7 +13,6 @@ include 'includes/db_connection.php';
 
         function login(){
             if(isset($_POST["login_btn"])){
-                //$boss;
                 $email = $_POST["email"];
                 $password = $_POST["password"];
                 if(!empty($email) && !empty($password)){
